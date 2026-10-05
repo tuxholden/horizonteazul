@@ -1,0 +1,100 @@
+/* ===== CORES: edite aqui ===== */
+:root{
+  --marinho:#0A2463;
+  --azul:#1D5FD1;
+  --azul-claro:#E8F0FF;
+  --amarelo:#FFC72C;
+  --amarelo-claro:#fae185;
+  --texto:#13203F;
+  --branco:#fff;
+  --fonte-titulo:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
+  --fonte-texto:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fonte-texto);color:var(--texto);background:var(--branco);font-size:1.125rem;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+.estreito{width:min(720px,100% - 2.5rem)}
+h1,h2,h3{font-family:var(--fonte-titulo);line-height:1.1;color:var(--marinho)}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1.25rem}
+h3{font-size:1.3rem;margin-bottom:.4rem}
+p+p{margin-top:1rem}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+
+/* Botões */
+.btn{display:inline-block;background:var(--amarelo);color:var(--marinho);font-family:var(--fonte-titulo);font-weight:800;font-size:1.1rem;padding:.95rem 1.8rem;border-radius:999px;text-decoration:none;box-shadow:0 4px 0 #C99A00;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 #C99A00}
+.btn-sm{font-size:.95rem;padding:.55rem 1.1rem;box-shadow:0 3px 0 #C99A00}
+.btn-grande{font-size:1.25rem;padding:1.1rem 2.4rem}
+.mini{font-size:.95rem;opacity:.8;margin-top:.9rem}
+
+/* Topo */
+.topo{background:var(--marinho);position:sticky;top:0;z-index:10}
+.topo-in{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0}
+.marca{display:flex;align-items:center;gap:.6rem;color:var(--branco);text-decoration:none;font-family:var(--fonte-titulo);font-weight:800}
+
+/* Hero: fundo de papel milimetrado */
+.hero{background-color:var(--marinho);color:var(--branco);
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:40px 40px;padding:4rem 0 4.5rem}
+.hero-in{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.hero h1{color:var(--branco);font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1.2rem}
+.hero .sub{font-size:1.3rem;max-width:30em}
+.hero .apoio{color:var(--amarelo);font-weight:600;margin:1rem 0 1.8rem}
+.capa{position:relative;justify-self:center;width:min(340px,100%);aspect-ratio:4/5}
+.capa img{width:100%;height:100%;object-fit:contain;position:relative;filter:drop-shadow(0 18px 30px rgba(0,0,0,.45))}
+/* Placeholder: barras de gráfico, some quando a capa carrega */
+.capa-placeholder{position:absolute;inset:0;border:2px dashed rgba(255,255,255,.4);border-radius:14px;display:flex;align-items:flex-end;gap:12px;padding:2rem}
+.capa-placeholder span{flex:1;background:var(--azul);border-radius:4px 4px 0 0}
+.capa-placeholder span:nth-child(1){height:30%}
+.capa-placeholder span:nth-child(2){height:48%}
+.capa-placeholder span:nth-child(3){height:82%;background:var(--amarelo)}
+.capa-placeholder span:nth-child(4){height:58%}
+.capa-placeholder span:nth-child(5){height:40%}
+.capa.carregada .capa-placeholder{display:none}
+.capa:not(.carregada) img{opacity:0}
+
+/* Seções */
+.secao{padding:4.5rem 0}
+.secao.pequeno{padding:2.5rem 0 4rem}
+.azul{background:var(--azul-claro)}
+.amarelo{background:var(--amarelo-claro)}
+
+/* Lista de aprendizados */
+.lista{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem 2rem}
+.lista li{padding-left:1.2rem;border-left:5px solid var(--amarelo)}
+.lista strong{color:var(--marinho)}
+
+/* Passos */
+.passos{list-style:none;counter-reset:p;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.passos li{counter-increment:p;background:var(--azul-claro);border-radius:14px;padding:1.6rem}
+.passos li::before{content:counter(p);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--azul);color:var(--branco);font-family:var(--fonte-titulo);font-weight:800;margin-bottom:.8rem}
+
+/* Oferta */
+.oferta{max-width:520px;margin:auto;text-align:center;border:3px solid var(--azul);border-radius:20px;padding:2.5rem 1.8rem;box-shadow:0 10px 0 var(--amarelo)}
+.inclui{list-style:none;text-align:left;margin:1.2rem 0 1.5rem}
+.inclui li{padding:.4rem 0 .4rem 1.8rem;position:relative}
+.inclui li::before{content:"✓";position:absolute;left:0;color:var(--azul);font-weight:800}
+.preco-de{opacity:.7}
+.preco{font-family:var(--fonte-titulo);font-weight:800;font-size:3.4rem;color:var(--marinho);margin:0 0 1.2rem!important;line-height:1}
+
+/* FAQ */
+.faq details{background:var(--branco);border-radius:10px;margin-bottom:.8rem;padding:1rem 1.2rem}
+.faq summary{cursor:pointer;font-weight:600;color:var(--marinho)}
+.faq details[open] summary{margin-bottom:.6rem}
+
+/* CTA final e rodapé */
+.final{background:var(--marinho);color:var(--branco);text-align:center;padding:4.5rem 0}
+.final h2{color:var(--branco)}
+.final p{margin-bottom:1.8rem}
+.rodape{background:#071845;color:#B9C6E8;font-size:.9rem;padding:1.8rem 0;text-align:center}
+
+/* Celular */
+@media (max-width:760px){
+  .hero-in{grid-template-columns:1fr}
+  .capa{width:min(240px,70%)}
+  .lista,.passos{grid-template-columns:1fr}
+  .marca span{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
